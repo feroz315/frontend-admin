@@ -5,15 +5,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import { signInWithEmailAndPassword } from 'firebase/auth';
-// import { FirebaseAuth } from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { Toast } from '../utilis/Toast';
 import axios from 'axios';
@@ -41,7 +38,6 @@ const defaultTheme = createTheme();
 
 export default function SignIn() {
 
-// const Auth = FirebaseAuth;
 const navigate = useNavigate();
 
  const [email, setEmail ] = useState('');   
@@ -59,6 +55,7 @@ const navigate = useNavigate();
      password,
     
  };
+
     const response = await axios.post(`${BASE_URL}/login`,obj);   
     console.log("respone",response);
     if (response.data.status) {
@@ -76,8 +73,7 @@ const navigate = useNavigate();
  console.log("error",error)
  Toast(error?.response?.data?.message || error.message, "error");
 
-   
-}
+  }
 
    }
 
