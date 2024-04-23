@@ -3,6 +3,7 @@ import React,{ useEffect, useState } from 'react'
 import Cards from '../Compoentents/Cards';
 import { Box, Grid } from '@mui/material';
 import ButtonAppBar from '../Compoentents/Navbar';
+import { BASE_URL } from '../Constant/index';
 
 
 
@@ -14,7 +15,7 @@ const [ products, setProducts ] = useState([]);
 const getproducts = async() => {
 
 try {
-    const userproduct = await axios.get("https://fakestoreapi.com/products")
+    const userproduct = await axios.get(`${BASE_URL}/products`,products)
     console.log("product", userproduct.data);
     setProducts(userproduct.data)
 } catch (error) {
