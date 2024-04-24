@@ -31,7 +31,7 @@ console.log("data", products )
 const getproductsId = async() => {
 
 try {
-    const getId = await axios.get(`${BASE_URL}/products/:${id}`)
+    const getId = await axios.get(`${BASE_URL}/products/:${id}`, products)
     console.log("getid",getId.data);
     setProducts(getId.data)
 } catch (error) {
@@ -66,7 +66,7 @@ getproductsId();
     </div>  
 
    <div class="max-w-xs rounded overflow-hidden shadow-lg mt-2 border-r-4">
-    <img class="w-3/4 h-20 ml-10 mt-2" src={image} alt="Laptop Bag"/>
+    <img class="w-3/4 h-20 ml-10 mt-2" src={image}/>
      <div class="px-6 py-4 ml-6">
       <div class="font-bold text-lg mb-2">{title}</div>
       <p class="text-gray-700 text-sm">
