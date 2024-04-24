@@ -5,6 +5,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useDispatch,useSelector } from 'react-redux';
 import { AddItem, selectcartItems } from '../Redux/AddCardSlice';
+import { BASE_URL } from '../Constant/index';
 
 
 const Details = () => {
@@ -30,7 +31,7 @@ console.log("data", products )
 const getproductsId = async() => {
 
 try {
-    const getId = await axios.get(`https://fakestoreapi.com/products/${id}`)
+    const getId = await axios.get(`${BASE_URL}/products/:${id}`)
     console.log("getid",getId.data);
     setProducts(getId.data)
 } catch (error) {
