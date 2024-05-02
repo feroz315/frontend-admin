@@ -15,7 +15,7 @@ const [ products, setProducts ] = useState([]);
 const getproducts = async() => {
 
 try {
-    const userproduct = await axios.get(`${BASE_URL}/products`,products)
+    const userproduct = await axios.get(`${BASE_URL}/products`, products)
     console.log("product", userproduct.data);
     setProducts(userproduct.data)
 } catch (error) {

@@ -31,7 +31,7 @@ console.log("data", products )
 const getproductsId = async() => {
 
 try {
-    const getId = await axios.get(`${BASE_URL}/products/:${id}`, products)
+    const getId = await axios.get(`${BASE_URL}/products/:${id}`, id)
     console.log("getid",getId.data);
     setProducts(getId.data)
 } catch (error) {
