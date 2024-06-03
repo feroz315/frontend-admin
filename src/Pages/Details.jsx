@@ -14,7 +14,7 @@ const { id } = useParams();
 const navigate = useNavigate();
 const dispatch = useDispatch();
 const productItem = useSelector(selectcartItems);
-
+console.log("productItem", productItem)
 
 
 const [ products, setProducts ] = useState([]);
@@ -31,7 +31,7 @@ console.log("data", products )
 const getproductsId = async() => {
 
 try {
-    const getId = await axios.get(`${BASE_URL}/products/:${id}`, id)
+    const getId = await axios.get(`${BASE_URL}/products/:id`, id)
     console.log("getid",getId.data);
     setProducts(getId.data)
 } catch (error) {
